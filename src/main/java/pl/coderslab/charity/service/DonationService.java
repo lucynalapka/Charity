@@ -1,4 +1,8 @@
 package pl.coderslab.charity.service;
 
-public class DonationService {
+import pl.coderslab.charity.model.Category;
+import pl.coderslab.charity.model.Donation;
+
+public interface DonationService {
+    void saveDonation(Donation donation);
 }

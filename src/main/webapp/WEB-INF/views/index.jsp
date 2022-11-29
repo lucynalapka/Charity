@@ -45,11 +45,11 @@
     <div class="container container--85">
         <div class="stats--item">
             <em>
-<%--                <c:set var="quantityTotal" value="${0}"/>--%>
-<%--                <c:forEach var="item" items="${donations}">--%>
-<%--                    <c:set var="quantityTotal" value="${quantityTotal + item.quantity}"/>--%>
-<%--                </c:forEach>--%>
-<%--                ${quantityTotal}--%>
+                <%--                <c:set var="quantityTotal" value="${0}"/>--%>
+                <%--                <c:forEach var="item" items="${donations}">--%>
+                <%--                    <c:set var="quantityTotal" value="${quantityTotal + item.quantity}"/>--%>
+                <%--                </c:forEach>--%>
+                <%--                ${quantityTotal}--%>
                 ${donations}
             </em>
 
@@ -66,14 +66,12 @@
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam magnam, sint nihil cupiditate quas
                 quam.</p>
         </div>
-        <%--        <div>--%>
-        <%--            <img src="<c:url value="resources/images/stats-bg.jpg"/>"/>--%>
-        <%--        </div>--%>
+
     </div>
     <img src="<c:url value="resources/images/stats-bg.jpg"/>"/>
 </section>
 
-<section class="steps">
+<section class="steps" id="steps">
     <h2>Wystarczą 4 proste kroki</h2>
 
 
@@ -107,7 +105,7 @@
     <a href="#" class="btn btn--large">Załóż konto</a>
 </section>
 
-<section class="about-us">
+<section class="about-us" id="about-us">
 
     <div class="about-us--text">
         <h2>O nas</h2>
@@ -121,7 +119,7 @@
     </div>
 </section>
 
-<section class="help">
+<section class="help" id="help">
     <h2>Komu pomagamy?</h2>
 
 
@@ -130,44 +128,36 @@
         <p>W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi współpracujemy.
             Możesz sprawdzić czym się zajmują.</p>
 
-        <%--            <ul class="help--slides-items">--%>
-        <%--                <li>--%>
-        <%--                    <div class="col">--%>
-        <%--                        <c:forEach  var="item" items="${institutions}" varStatus="2">--%>
-        <%--                        <div class="title">Fundacja--%>
-        <%--                            </th>--%>
-        <%--                                <td>--%>
-        <%--                                ${item.name}</div>--%>
-        <%--                        <div class="subtitle">Cel i misja: ${item.description}</div>--%>
-        <%--                        </c:forEach>--%>
-        <%--                    </div>--%>
-
-        <%--                </li>--%>
-
-        <%--            </ul>--%>
-
         <ul class="help--slides-items">
-            <c:set var="numCols" value="2"/>
-            <%--            <div>--%>
-            <c:forEach var="item" items="${institutions}" varStatus="status">
-                <c:if test="${status.index % numCols == 0}">
-                </c:if>
 
-                <li>
-                    <div class="col">
+            <li>
+                <c:set var="numCols" value="2"/>
+                <%--            <div>--%>
+                <c:forEach var="item" items="${institutions}" varStatus="status">
+                    <c:if test="${status.index % numCols == 0}">
+
                         <div class="col">
-
                             <div class="title">Fundacja <c:out value="${item.name}"/></div>
                             <div class="subtitle">Cel i misja: <c:out value="${item.description}"/></div>
                         </div>
+                    </c:if>
+                    <%--                    <c:if test="${status.count% numCols == 0 or status.last}"></tr></c:if>--%>
+                </c:forEach>
+            </li>
+            <li>
+                <c:set var="numCols" value="2"/>
+                <c:forEach var="item" items="${institutions}" varStatus="status">
+                    <c:if test="${status.index % numCols != 0}">
 
+                        <div class="col">
+                            <div class="title">Fundacja <c:out value="${item.name}"/></div>
+                            <div class="subtitle">Cel i misja: <c:out value="${item.description}"/></div>
+                        </div>
+                    </c:if>
+                    <%--                    <c:if test="${status.count% numCols == 0 or status.last}"></tr></c:if>--%>
+                </c:forEach>
+            </li>
 
-                    </div>
-
-                    <c:if test="${status.count% numCols == 0 or status.last}"></tr></c:if>
-                </li>
-
-            </c:forEach>
         </ul>
 
     </div>
