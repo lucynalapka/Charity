@@ -22,7 +22,7 @@ const com = document.querySelector('#com');
 
 const submit = document.querySelector('#submit');
 
-let chosen = '';
+let chosen = " ";
 categories.forEach(function (el){
     chosen += el.innerText;
 })
