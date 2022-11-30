@@ -1,10 +1,12 @@
 package pl.coderslab.charity.service;
 
-import pl.coderslab.charity.model.Category;
+
+import org.springframework.stereotype.Service;
 import pl.coderslab.charity.model.Institution;
 
 import java.util.List;
 
 public interface InstitutionService {
     List<Institution> getAll();
+
 }

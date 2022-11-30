@@ -5,15 +5,15 @@ import pl.coderslab.charity.model.Category;
 import pl.coderslab.charity.repository.CategoryRepository;
 
 import java.util.List;
-import java.util.Optional;
+
 
 @Service
 public class CategoryServiceImpl implements CategoryService {
-    private final CategoryService categoryService;
+
     private final  CategoryRepository categoryRepository;
 
-    public CategoryServiceImpl(CategoryService categoryService, CategoryRepository categoryRepository) {
-        this.categoryService = categoryService;
+    public CategoryServiceImpl (CategoryRepository categoryRepository) {
+
         this.categoryRepository = categoryRepository;
     }
 
@@ -24,12 +24,12 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     public void saveCategory(Category category) {
-        categoryService.saveCategory(category);
+        categoryRepository.save(category);
     }
 
     @Override
-    public void delete(Long id) {
-        categoryService.delete(id);
+    public void deleteCategoryById(Long id) {
+        categoryRepository.deleteCategoryById(id);
     }
 
 }

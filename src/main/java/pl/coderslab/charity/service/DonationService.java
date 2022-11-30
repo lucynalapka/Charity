@@ -5,4 +5,5 @@ import pl.coderslab.charity.model.Donation;
 
 public interface DonationService {
     void saveDonation(Donation donation);
+
 }
