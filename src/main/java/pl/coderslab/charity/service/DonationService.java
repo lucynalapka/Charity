@@ -4,6 +4,6 @@ import pl.coderslab.charity.model.Category;
 import pl.coderslab.charity.model.Donation;
 
 public interface DonationService {
-    void saveDonation(Donation donation);
+    void save(Donation donation);
 
 }

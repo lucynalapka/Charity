@@ -1,5 +1,6 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <%--
   Created by IntelliJ IDEA.
   User: cyluna
@@ -169,7 +170,7 @@
                 </div>
                 <div class="form-group form-group--buttons">
                     <button type="button" class="btn prev-step">Wstecz</button>
-                    <button type="button" class="btn next-step">Dalej</button>
+                    <button type="button" class="btn next-step" id="submit">Dalej</button>
                 </div>
             </div>
 
@@ -218,8 +219,8 @@
                 </div>
 
                 <div class="form-group form-group--buttons">
-                    <button type="button" class="btn prev-step" id="prev">Wstecz</button>
-                    <button type="submit" class="btn" id="confirm">Potwierdzam</button>
+                    <button type="button" class="btn prev-step" >Wstecz</button>
+                    <button type="submit" class="btn" >Potwierdzam</button>
                 </div>
             </div>
         </form:form>

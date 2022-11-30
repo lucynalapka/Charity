@@ -20,24 +20,24 @@ const time = document.querySelector('#time');
 const com = document.querySelector('#com');
 
 
-const confirm = document.querySelector('#confirm');
+const submit = document.querySelector('#submit');
 
+let chosen = '';
+categories.forEach(function (el){
+    chosen += el.innerText;
+})
 
-confirm.addEventListener('click', sumUp);
+submit.addEventListener('click', sumUp);
 
 function sumUp(){
-quant.innerText = quantity.value + " worki z kategorii: " + chosen;
-inst.innerText =  " Dla fundacji: " + institution.value;
+quant.innerText= quantity.value + " worki z kategorii: " + chosen;
+inst.innerText =  " Dla fundacji: " + institution.innerText;
 str.innerText = street.value;
 cit.innerText = city.value;
 zip.innerText = zipCode.value;
 no.innerText = phone.value;
 date.innerText = pickUpDate.value;
 time.innerText = pickUpTime.value;
-com.innerText = com.value;
+com.innerText = pickUpComment.value;
 
 }
-let chosen = '';
-categories.forEach(function (el){
-    chosen += el.innerText;
-})

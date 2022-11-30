@@ -43,7 +43,7 @@ public class DonationController {
 
     @RequestMapping(value = "/form", method = RequestMethod.POST)
     public String submit(Model model, Donation donation) {
-        donationService.saveDonation(donation);
+        donationService.save(donation);
         return "form-confirmation";
     }
 

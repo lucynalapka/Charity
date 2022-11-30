@@ -15,7 +15,7 @@ public class DonationServiceImpl implements DonationService{
 
 
     @Override
-    public void saveDonation(Donation donation) {
+    public void save(Donation donation) {
         donationRepository.save(donation);
     }
 }
