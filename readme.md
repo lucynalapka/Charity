@@ -1,10 +1,21 @@
+#### About the project:
+A web application for donating unnecessary things to trusted institutions. User can choose one or several categories of items they would like to donate, their quantity, organization, address, date and time of pick up those items. 
 
-Przed przystąpieniem do pracy  przeczytaj poniższe wskazówki.
-## Jak zacząć?
+Project WiP. 
 
-1. Zaimportuj projekt jako projekt `Maven`, wg poniższych wskazówek:
 
-	* W `IntelliJ` wybieramy: `File –> New –> Project from Existing Sources...`
-	* Wskazujemy lokalizację katalogu ze sklonowanym projektem i zatwierdzamy.
-	* Następnie w nowym oknie wybieramy: `Import project from external model` i wskazujemy `Maven`
-	* Wybieramy kolejno opcje: `Next –> Next –> Next –> Finish`
+#### Functionalities:
+* adding donations
+* admin profile
+* user profile
+* registration
+* login
+* managing of institutions
+* confirmation of account activation
+
+#### Technologies used:
+* Spring Boot
+* Spring Form
+* Hibernate
+* Spring Data JPA
+* Spring Security
