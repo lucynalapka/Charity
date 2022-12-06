@@ -11,7 +11,7 @@ import pl.coderslab.charity.model.Institution;
 import pl.coderslab.charity.service.CategoryService;
 import pl.coderslab.charity.service.DonationService;
 
-import pl.coderslab.charity.service.InstitutionServiceImpl;
+import pl.coderslab.charity.service.serviceImpl.InstitutionServiceImpl;
 
 import java.util.List;
 

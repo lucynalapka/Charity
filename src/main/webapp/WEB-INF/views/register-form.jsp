@@ -1,11 +1,12 @@
 <%--
   Created by IntelliJ IDEA.
   User: cyluna
-  Date: 30.11.2022
-  Time: 23:08
+  Date: 01.12.2022
+  Time: 14:25
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -37,21 +38,26 @@
     </nav>
 </header>
 
-
 <section class="login-page">
-    <h2>Zaloguj się</h2>
+    <h2>Załóż konto</h2>
     <form:form method="post">
         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+        <div class="form-group">
+            <input type="username" name="username" placeholder="Username"/>
+        </div>
         <div class="form-group">
             <input type="email" name="email" placeholder="Email"/>
         </div>
         <div class="form-group">
             <input type="password" name="password" placeholder="Hasło"/>
-            <a href="#" class="btn btn--small btn--without-border reset-password">Przypomnij hasło</a>
         </div>
+        <div class="form-group">
+            <input type="password" name="password2" placeholder="Powtórz hasło"/>
+        </div>
+
         <div class="form-group form-group--buttons">
-            <a href="<c:url value="/register"/>" class="btn btn--without-border">Załóż konto</a>
-            <input class="btn" type="submit" value="Zaloguj się"/>
+            <a href="<c:url value="/login"/>" class="btn btn--without-border">Zaloguj się</a>
+            <input type="submit" class="btn" value="Załóż konto"/>
         </div>
         <div class="col-md-6">
             <div class="form-label-group">
@@ -63,33 +69,10 @@
     </form:form>
 </section>
 
-<footer>
-    <div class="contact">
-        <h2>Skontaktuj się z nami</h2>
-        <h3>Formularz kontaktowy</h3>
-        <form>
-            <div class="form-group form-group--50">
-                <input type="text" name="name" placeholder="Imię"/>
-            </div>
-            <div class="form-group form-group--50">
-                <input type="text" name="surname" placeholder="Nazwisko"/>
-            </div>
 
-            <div class="form-group">
-                <textarea name="message" placeholder="Wiadomość" rows="1"></textarea>
-            </div>
+<jsp:include page="footer.jsp"/>
 
-            <button class="btn" type="submit">Wyślij</button>
-        </form>
-    </div>
-    <div class="bottom-line">
-        <span class="bottom-line--copy">Copyright &copy; 2018</span>
-        <div class="bottom-line--icons">
-            <a href="#" class="btn btn--small"><img src="images/icon-facebook.svg"/></a>
-            <a href="#" class="btn btn--small"><img src="images/icon-instagram.svg"/></a>
-        </div>
-    </div>
-</footer>
+<script src="<c:url value="resources/js/app.js"/>"></script>
 </body>
 </html>
 
@@ -105,7 +88,7 @@
 <%--    <meta name="description" content="">--%>
 <%--    <meta name="author" content="">--%>
 
-<%--    <title>SB Admin - Login</title>--%>
+<%--    <title>SB Admin - Register</title>--%>
 
 <%--    <!-- Bootstrap core CSS-->--%>
 <%--    <link href="/resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">--%>
@@ -121,28 +104,59 @@
 <%--<body class="bg-dark">--%>
 
 <%--<div class="container">--%>
-<%--    <div class="card card-login mx-auto mt-5">--%>
-<%--        <div class="card-header">Login</div>--%>
+<%--    <div class="card card-register mx-auto mt-5">--%>
+<%--        <div class="card-header">Register an Account</div>--%>
 <%--        <div class="card-body">--%>
-<%--            <form method="post">--%>
-<%--                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>--%>
-<%--                <div class="form-group">--%>
-<%--                    <div class="form-label-group">--%>
-<%--                        <input type="text" id="email" name="email" class="form-control" placeholder="email" required="required" autofocus="autofocus">--%>
-<%--                        <label for="email">Email</label>--%>
+<%--            <form:form method="post">--%>
+<%--            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>--%>
+
+<%--            <div class="form-group">--%>
+<%--                <div class="form-label-group">--%>
+<%--                    <input type="text" id="email" name="email" class="form-control" placeholder="email" required="required" autofocus="autofocus">--%>
+<%--                    <label for="email">Email</label>--%>
+<%--                </div>--%>
+<%--            </div>--%>
+
+<%--            <div class="form-group">--%>
+<%--                <div class="form-row">--%>
+<%--                    <div class="col-md-6">--%>
+<%--                        <div class="form-label-group">--%>
+<%--                            <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required="required">--%>
+<%--                            <label for="inputPassword">Password</label>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
+<%--                    <div class="col-md-6">--%>
+<%--                        <div class="form-label-group">--%>
+<%--                            <input type="password" id="confirmPassword" name="confirm_password" class="form-control" placeholder="Confirm password" required="required">--%>
+<%--                            <label for="confirmPassword">Confirm password</label>--%>
+<%--                        </div>--%>
 <%--                    </div>--%>
 <%--                </div>--%>
-<%--                <div class="form-group">--%>
-<%--                    <div class="form-label-group">--%>
-<%--                        <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required="required">--%>
-<%--                        <label for="inputPassword">Password</label>--%>
-<%--                    </div>--%>
-<%--                </div>--%>
-<%--                <input type="submit" class="btn btn-primary btn-block" value="Login"/>--%>
-<%--            </form>--%>
+<%--            </div>--%>
+
+<%--        </div>--%>
+<%--        <input type="submit" class="btn btn-primary btn-block" value="Register"/>--%>
+<%--        <div class="col-md-6">--%>
+<%--            <div class="form-label-group">--%>
+<%--                <form:errors path="email" />--%>
+<%--                <form:errors path="password" />--%>
+<%--                <form:errors path="confirm_password" />--%>
+<%--            </div>--%>
+<%--        </div>--%>
+<%--        </form:form>--%>
+
+<%--        <div class="text-center">--%>
+<%--            <a class="d-block small mt-3" href="/login">Login Page</a>--%>
 
 <%--        </div>--%>
 <%--    </div>--%>
 <%--</div>--%>
+<%--</div>--%>
 
 
+<%--<jsp:include page="footer.jsp"/>--%>
+
+<%--<script src="<c:url value="resources/js/app.js"/>"></script>--%>
+<%--</body>--%>
+
+<%--</html>--%>
