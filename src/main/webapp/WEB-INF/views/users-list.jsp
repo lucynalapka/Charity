@@ -1,11 +1,12 @@
 <%--
   Created by IntelliJ IDEA.
   User: cyluna
-  Date: 30.11.2022
-  Time: 23:08
+  Date: 08.12.2022
+  Time: 08:27
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -37,40 +38,38 @@
     </nav>
 </header>
 
-
 <section class="login-page">
-    <h2>Zaloguj się</h2>
-    <form:form method="post">
+    <h2>Users</h2>
+    <table class="table">
+        <tr>
 
-        <div class="form-group">
-            <input type="email" name="email" placeholder="Email"/>
-        </div>
-        <div class="form-group">
-            <input type="password" name="password" placeholder="Hasło"/>
-            <a href="#" class="btn btn--small btn--without-border reset-password">Przypomnij hasło</a>
-        </div>
-        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-        <div class="form-group form-group--buttons">
-            <a href="<c:url value="/register"/>" class="btn btn--without-border">Załóż konto</a>
-            <input class="btn" type="submit" value="Zaloguj się"/>
-        </div>
-        <div class="col-md-6">
-            <div class="form-label-group">
-                <form:errors path="email"/>
-                <form:errors path="password"/>
-                <form:errors path="confirm_password"/>
-            </div>
-        </div>
-    </form:form>
-</section>
+            <th>Imię</th>
+            <th>Nazwisko</th>
+            <th>Email</th>
+            <th>Akcja</th>
+
+
+        </tr>
+        <c:forEach items="${users}" var="item">
+            <tr>
+                <td>${users.firstName}</td>
+                <td>${item.lastName}</td>
+                <td>${users.email}</td>
+                <td>
+               <a href="<c:url value="/users/delete/${item.id}"/>" class="btn btn--without-border">Usuń</a>
+                    <a href="<c:url value="/users/update/${item.id}"/>" class="btn btn--without-border">Edytuj</a>
+
+                </td>
+            </tr>
+
+        </c:forEach>
+
+    </table>
+
 
 <jsp:include page="footer.jsp"/>
 
 <script src="<c:url value="resources/js/app.js"/>"></script>
 </body>
 </html>
-
-
-
-
 

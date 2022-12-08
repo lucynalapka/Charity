@@ -14,11 +14,11 @@ import pl.coderslab.charity.service.UserService;
 @RequestMapping("/admin")
 public class AdminController { //strefa chroniona skonfigurowana w SecurityConfig
     private final UserService service;
-    @RequestMapping("")
-    @PreAuthorize("hasRole('ADMIN')")
-    public String index(@AuthenticationPrincipal UserDetails user, Model model){
-        model.addAttribute("user",service.findByUsername(user.getUsername()));
-        return "admin/index";
-    }
+//    @RequestMapping("")
+//    @PreAuthorize("hasRole('ADMIN')")
+//    public String index(@AuthenticationPrincipal UserDetails user, Model model){
+//        model.addAttribute("user",service.findByEmail(userDto.getEmail()));
+//        return "admin/index";
+//    }
 
 }
