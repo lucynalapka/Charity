@@ -16,11 +16,6 @@ public class HomeController {
     private final InstitutionRepository institutionRepository;
     private final DonationRepository donationRepository;
 
-
-    @RequestMapping(value = "/",method = RequestMethod.GET)
-    public String home(){
-        return "index";
-    }
     @RequestMapping("/")
     public String homeAction(Model model){
 

@@ -15,6 +15,8 @@ public interface UserService {
     public void update(User user);
     Optional<User> findByEmail(String email);
 
+    void saveAdmin(User u);
+
 //    public User findByEmail(String email);
 
 

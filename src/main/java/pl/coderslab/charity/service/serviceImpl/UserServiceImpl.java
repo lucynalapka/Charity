@@ -48,5 +48,8 @@ public class UserServiceImpl implements UserService {
         return userRepository.findByEmail(email);
     }
 
-
+    @Override
+    public void saveAdmin(User u) {
+        u.setEnabled(2);
+    }
 }
