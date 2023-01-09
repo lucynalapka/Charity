@@ -23,9 +23,6 @@ public class UserController {
         this.userService = userService;
     }
 
-
-
-
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String login(Model model, User user) {
         model.addAttribute("user", user);
@@ -51,11 +48,9 @@ public class UserController {
 //                    "An account registered with the same email already exists");
 ////            return "register-form";
 //        }
-
         if (result.hasErrors()) {
             return "register-form";
         }
-
         userService.saveUser(user);
         return "redirect:/login";
     }
@@ -81,14 +76,11 @@ public class UserController {
         return "user-edit";
     }
 
-
     @RequestMapping(value = "/users", method = RequestMethod.GET)
     public String users(Model model) {
         List<User> usersList = userService.showUsers();
         model.addAttribute("users", usersList);
         return "users-list";
     }
-
-
 
 }

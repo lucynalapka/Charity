@@ -52,4 +52,5 @@ public class UserServiceImpl implements UserService {
     public void saveAdmin(User u) {
         u.setEnabled(2);
     }
+
 }
